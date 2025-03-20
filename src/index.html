@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.PNG" type="image/x-icon">
+    <title>Currículo</title>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.documentElement.classList.add('dark');
+        }
+    });
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        };
+        </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
+
+
+<body class="bg-gray-700 text-gray-900 dark:bg-gray-900 dark:text-gray-100" style="background-image: url('img/backgroung-1.png');">
+    <button id="theme-toggle" class="fixed top-5 right-5 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-2 rounded-lg shadow-md">
+        🌙 Modo Escuro
+    </button>
+    
+    <div class="max-w-auto sm:mx-0 md:mx-0 lg:mx-48 my-10 p-5 bg-white dark:bg-gray-800 shadow-lg rounded-lg bg-cover bg-center">
+        <header class="flex flex-col items-center text-center mb-10">
+            <img src="img/foto_perfil.jpg" alt="Foto de Perfil" class="w-32 h-32 rounded-full mb-4 transition-transform transform hover:scale-110 md:w-48 md:h-48">
+            <h1 class="text-3xl font-bold">Lucas Duarte</h1>
+            <p class="text-gray-600 dark:text-gray-300">Estudante de Sistemas de Informação</p>
+        </header>
+
+        <!-- Seção de Sobre Mim -->
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold border-b pb-2 mb-4">Sobre Mim</h2>
+            <p class="text-gray-700 dark:text-gray-300">Sou estudante de Sistemas de Informação e apaixonado por programação, em busca de um estágio para aprimorar minhas habilidades em desenvolvimento de software. Tenho conhecimento em diversas linguagens, incluindo CSS, Java, JavaScript, Python, HTML, PHP e React Native, o que me permite desenvolver soluções versáteis e abrangentes. Meu objetivo é contribuir com projetos inovadores e eficientes, enquanto aprendo com profissionais experientes e colaboro para o crescimento da equipe.</p>
+        </section>
+
+        <!-- Seção de Educação -->
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold border-b pb-2 mb-4">Educação</h2>
+            <p class="text-gray-700 dark:text-gray-300">Bacharelado em Sistemas de Informação - Universidade Paulista UNIP (2022 - 2025)</p>
+            <p class="text-gray-700 dark:text-gray-300">Curso Técnico Integrado - Instituto Federal de Educação, Ciência e Tecnologia de São Paulo IFSP (2017 - 2019)</p>
+        </section>
+
+        <!-- Seção de Experiência -->
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold border-b pb-2 mb-4">Experiência</h2>
+            <p class="text-gray-700 dark:text-gray-300">Ainda não possuo experiência profissional, mas tenho trabalhado em diversos projetos acadêmicos e pessoais para aprimorar minhas habilidades.</p>
+        </section>
+
+        <!-- Seção de Certificações -->
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold border-b pb-2 mb-4">Certificações</h2>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li><a href="certificados/Estrutura de Dados.pdf" target="_blank" class="text-blue-500 hover:underline" rel="noopener noreferrer">Estrutura de Dados - IFRS</a></li>
+                <li><a href="certificados/Projeto de Sistemas Web Certificado.pdf" target="_blank" class="text-blue-500 hover:underline" rel="noopener noreferrer">Projeto de Sistemas Web - IFRS</a></li>
+                <li><a href="certificados/Banco de Dados 1 fundamentos.pdf" target="_blank" class="text-blue-500 hover:underline" rel="noopener noreferrer">Banco de Dados 1: fundamentos - IFRS</a></li>
+            </ul>
+        </section>
+
+        <!-- Seção de Projetos -->
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold border-b pb-2 mb-4">Projetos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-100 p-4 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold dark:text-gray-700">Portfólio Pessoal</h3>
+                    <p class="text-gray-700">Desenvolvimento de um site pessoal para exibir meu currículo e projetos. </p>
+                    <a href="#" class="text-blue-500 hover:underline block mt-2" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                </div>
+
+                <div class="bg-gray-100 p-4 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold dark:text-gray-700">Clone Spotify</h3>
+                    <p class="text-gray-700">Criação de uma página clone do Spotify utilizando Tailwindcss.</p>
+                    <a href="https://github.com/LucasDuarte42/CloneSpotifyTailwind" class="text-blue-500 hover:underline block mt-2" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                </div>
+
+                <div class="bg-gray-100 p-4 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold dark:text-gray-700">App IMC</h3>
+                    <p class="text-gray-700">Aplicativo de cálculo de IMC utilizando React-Native. </p>
+                    <a href="https://github.com/LucasDuarte42/AppIMC-React-Native" class="text-blue-500 hover:underline block mt-2" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Soft Skills -->
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold border-b pb-2 mb-4">Soft Skills</h2>
+            <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300">
+                <li>Comunicação eficaz</li>
+                <li>Trabalho em equipe</li>
+                <li>Resolução de problemas</li>
+            </ul>
+        </section>
+
+        <!-- Seção de Habilidades -->
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold border-b pb-2 mb-4">Habilidades</h2>
+            <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300">
+                <li>HTML, CSS e JavaScript</li>
+                <li>React Native e Firebase</li>
+                <li>Python e Flask</li>
+            </ul>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section>
+            <h2 class="text-xl font-semibold border-b pb-2 mb-4">Contato</h2>
+            <p class="text-gray-700 dark:text-gray-300"> <i class="fab fa-github mr-2 text-xl"></i>GitHub: <a href="https://github.com/LucasDuarte42" class="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">github.com/LucasDuarte42</a></p>
+            <p class="text-gray-700 dark:text-gray-300"> <i class="fas fa-envelope mr-2 text-xl"></i>Email: <button onclick="copyEmail()" class="text-blue-500 hover:underline">lucasduarte0227@gmail.com</button></p>
+            <p class="text-gray-700 dark:text-gray-300"> <i class="fab fa-linkedin mr-2 text-xl"></i>LinkedIn: <a href="https://www.linkedin.com/in/lucas-duarte-54b644297/" class="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">linkedin.com/in/lucas-duarte</a></p>
+        </section>
+    </div>
+
+    <script>
+        function copyEmail() {
+            navigator.clipboard.writeText('lucasduarte0227@gmail.com')
+                .then(() => alert('Email copiado para a área de transferência!'))
+                .catch(err => console.error('Erro ao copiar email:', err));
+        }
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const darkModeKey = 'darkMode';
+        const root = document.documentElement;
+
+        function updateButtonText() {
+            themeToggle.textContent = root.classList.contains('dark') ? "☀️ Modo Claro" : "🌙 Modo Escuro";
+        }
+
+        themeToggle.addEventListener('click', () => {
+            root.classList.toggle('dark');
+            if (root.classList.contains('dark')) {
+                localStorage.setItem(darkModeKey, 'enabled');
+            } else {
+                localStorage.setItem(darkModeKey, 'disabled');
+            }
+            updateButtonText();
+        });
+
+        updateButtonText();
+    </script>
+
+</body>
+</html>
