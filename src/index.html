@@ -25,42 +25,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-
-
-
 <body class="bg-gray-700 text-gray-900 dark:bg-gray-900 dark:text-gray-100" style="background-image: url('img/backgroung-1.png');">
-    <button id="theme-toggle" class="fixed top-5 right-5 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-2 rounded-lg shadow-md">
-        🌙 Modo Escuro
-    </button>
+
     
-    <div class="max-w-auto sm:mx-0 md:mx-0 lg:mx-48 my-10 p-5 bg-white dark:bg-gray-800 shadow-lg rounded-lg bg-cover bg-center">
-        <header class="flex flex-col items-center text-center mb-10">
+    <header class="fixed top-0 left-0 w-full bg-gray-800 bg-gray-800 text-white shadow-lg flex items-center justify-between px-5 py-4 z-50">
+        <!-- Botão Menu Hambúrguer -->
+        <button id="menu-toggle" class="text-xl focus:outline-none">
+            ☰
+        </button>
+
+        <!-- Nome no centro -->
+        <h1 class="text-lg font-semibold">Portfólio</h1>
+
+        <button id="theme-toggle" class="text-lg">
+            🌙
+        </button>
+
+        <!-- Menu Dropdown -->
+        <nav id="menu" class="hidden absolute top-14 left-5 bg-gray-900 text-white w-40 rounded-lg shadow-lg py-2">
+            <ul class="flex flex-col space-y-2 text-center">
+                <li><a href="#sobre" class="block px-4 py-2 hover:bg-gray-700">Sobre Mim</a></li>
+                <li><a href="#educacao" class="block px-4 py-2 hover:bg-gray-700">Educação</a></li>
+                <li><a href="#experiencia" class="block px-4 py-2 hover:bg-gray-700">Experiência</a></li>
+                <li><a href="#certificados" class="block px-4 py-2 hover:bg-gray-700">Certificados</a></li>
+                <li><a href="#projetos" class="block px-4 py-2 hover:bg-gray-700">Projetos</a></li>
+                <li><a href="#contato" class="block px-4 py-2 hover:bg-gray-700">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="max-w-auto sm:mx-0 md:mx-0 lg:mx-48 my-10 p-5 bg-white dark:bg-gray-800 shadow-lg rounded-lg bg-cover bg-center mt-16">
+        
+        
+        
+
+        <section class="flex flex-col items-center text-center">
             <img src="img/foto_perfil.jpg" alt="Foto de Perfil" class="w-32 h-32 rounded-full mb-4 transition-transform transform hover:scale-110 md:w-48 md:h-48">
             <h1 class="text-3xl font-bold">Lucas Duarte</h1>
             <p class="text-gray-600 dark:text-gray-300">Estudante de Sistemas de Informação</p>
-        </header>
 
+        </section>
         <!-- Seção de Sobre Mim -->
-        <section class="mb-8">
+        <section id="sobre" class="mb-8">
             <h2 class="text-xl font-semibold border-b pb-2 mb-4">Sobre Mim</h2>
             <p class="text-gray-700 dark:text-gray-300">Sou estudante de Sistemas de Informação e apaixonado por programação, em busca de um estágio para aprimorar minhas habilidades em desenvolvimento de software. Tenho conhecimento em diversas linguagens, incluindo CSS, Java, JavaScript, Python, HTML, PHP e React Native, o que me permite desenvolver soluções versáteis e abrangentes. Meu objetivo é contribuir com projetos inovadores e eficientes, enquanto aprendo com profissionais experientes e colaboro para o crescimento da equipe.</p>
         </section>
 
         <!-- Seção de Educação -->
-        <section class="mb-8">
+        <section id="educacao" class="mb-8">
             <h2 class="text-xl font-semibold border-b pb-2 mb-4">Educação</h2>
             <p class="text-gray-700 dark:text-gray-300">Bacharelado em Sistemas de Informação - Universidade Paulista UNIP (2022 - 2025)</p>
             <p class="text-gray-700 dark:text-gray-300">Curso Técnico Integrado - Instituto Federal de Educação, Ciência e Tecnologia de São Paulo IFSP (2017 - 2019)</p>
         </section>
 
         <!-- Seção de Experiência -->
-        <section class="mb-8">
+        <section id="experiencia" class="mb-8">
             <h2 class="text-xl font-semibold border-b pb-2 mb-4">Experiência</h2>
             <p class="text-gray-700 dark:text-gray-300">Ainda não possuo experiência profissional, mas tenho trabalhado em diversos projetos acadêmicos e pessoais para aprimorar minhas habilidades.</p>
         </section>
 
         <!-- Seção de Certificações -->
-        <section class="mb-8">
+        <section id="certificados" class="mb-8">
             <h2 class="text-xl font-semibold border-b pb-2 mb-4">Certificações</h2>
             <ul class="list-disc pl-5 text-gray-700">
                 <li><a href="certificados/Estrutura de Dados.pdf" target="_blank" class="text-blue-500 hover:underline" rel="noopener noreferrer">Estrutura de Dados - IFRS</a></li>
@@ -70,7 +94,7 @@
         </section>
 
         <!-- Seção de Projetos -->
-        <section class="mb-8">
+        <section id="projetos" class="mb-8">
             <h2 class="text-xl font-semibold border-b pb-2 mb-4">Projetos</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-gray-100 p-4 rounded-lg shadow">
@@ -114,7 +138,7 @@
         </section>
 
         <!-- Seção de Contato -->
-        <section>
+        <section id="contato">
             <h2 class="text-xl font-semibold border-b pb-2 mb-4">Contato</h2>
             <p class="text-gray-700 dark:text-gray-300"> <i class="fab fa-github mr-2 text-xl"></i>GitHub: <a href="https://github.com/LucasDuarte42" class="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">github.com/LucasDuarte42</a></p>
             <p class="text-gray-700 dark:text-gray-300"> <i class="fas fa-envelope mr-2 text-xl"></i>Email: <button onclick="copyEmail()" class="text-blue-500 hover:underline">lucasduarte0227@gmail.com</button></p>
@@ -130,24 +154,34 @@
         }
 
         const themeToggle = document.getElementById('theme-toggle');
-        const darkModeKey = 'darkMode';
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
         const root = document.documentElement;
 
         function updateButtonText() {
-            themeToggle.textContent = root.classList.contains('dark') ? "☀️ Modo Claro" : "🌙 Modo Escuro";
+            themeToggle.textContent = root.classList.contains('dark') ? "☀️" : "🌙";
         }
 
+        // Dark Mode
         themeToggle.addEventListener('click', () => {
             root.classList.toggle('dark');
-            if (root.classList.contains('dark')) {
-                localStorage.setItem(darkModeKey, 'enabled');
-            } else {
-                localStorage.setItem(darkModeKey, 'disabled');
-            }
+            localStorage.setItem('darkMode', root.classList.contains('dark') ? 'enabled' : 'disabled');
             updateButtonText();
         });
 
         updateButtonText();
+
+        // Menu Hambúrguer
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Fecha o menu ao clicar fora
+        document.addEventListener('click', (event) => {
+            if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+                menu.classList.add('hidden');
+            }
+        });
     </script>
 
 </body>
