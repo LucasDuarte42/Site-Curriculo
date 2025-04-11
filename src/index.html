@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon.PNG" type="image/x-icon">
+    
     <title>Currículo</title>
 
     <script>
@@ -13,7 +14,6 @@
         }
     });
     </script>
-
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -21,17 +21,31 @@
             darkMode: 'class'
         };
         </script>
+        <style>
+            @keyframes gradientAnimation {
+              0% { background-position: 0% 50%; }
+              50% { background-position: 100% 50%; }
+              100% { background-position: 0% 50%; }
+            }
+        
+            .bg-gradient-animated {
+              background: linear-gradient(-45deg, #4b5563, #374151, #1f2937, #111827);
+              background-size: 100% 100%;
+              animation: gradientAnimation 6s ease infinite;
+            }
+          </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="bg-gray-700 text-gray-900 dark:bg-gray-900 dark:text-gray-100" style="background-image: url('img/backgroung-1.png');">
+<body class="bg-gradient-animated text-gray-900 dark:text-gray-100">
+
 
     
     <header class="fixed top-0 left-0 w-full bg-gray-800 text-white shadow-lg flex items-center justify-between px-5 py-4 z-50">
         <!-- Botão Menu Hambúrguer -->
         <button id="menu-toggle" class="text-xl focus:outline-none">
-            ☰
+            ☰  
         </button>
 
         <!-- Nome no centro -->
@@ -41,7 +55,7 @@
             🌙
         </button>
 
-        <!-- Menu Dropdown -->
+        
         <nav id="menu" class="hidden absolute top-14 left-5 bg-gray-900 text-white w-40 rounded-lg shadow-lg py-2">
             <ul class="flex flex-col space-y-2 text-center">
                 <li><a href="#sobre" class="block px-4 py-2 hover:bg-gray-700">Sobre Mim</a></li>
@@ -57,17 +71,21 @@
         
         
         
-
-        <section class="flex flex-col items-center text-center">
-            <img src="img/foto_perfil.jpg" alt="Foto de Perfil" class="w-32 h-32 rounded-full mb-4 transition-transform transform hover:scale-110 md:w-48 md:h-48">
-            <h1 class="text-3xl font-bold">Lucas Duarte</h1>
-            <p class="text-gray-600 dark:text-gray-300">Estudante de Sistemas de Informação</p>
-
-        </section>
+       <!-- Seção Foto de Perfil -->
+<section class="flex flex-col items-center text-center">
+    <img src="img/foto_perfil.jpg" alt="Foto de Perfil" class="w-32 h-32 rounded-full mb-4 transition-transform transform hover:scale-110 md:w-48 md:h-48">
+    <h1 class="text-3xl font-bold">Lucas Duarte</h1>
+    <p class="text-gray-600 dark:text-gray-300">Estudante de Sistemas de Informação</p>
+    <!-- Botão para baixar PDF -->
+    <a href="caminho/para/seu/curriculo.pdf" download="Curriculo-Lucas-Duarte.pdf" 
+       class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+       <i class="fas fa-download mr-2"></i>Download Cúrriculo
+    </a>
+</section>
         <!-- Seção de Sobre Mim -->
         <section id="sobre" class="mb-8">
             <h2 class="text-xl font-semibold border-b pb-2 mb-4">Sobre Mim</h2>
-            <p class="text-gray-700 dark:text-gray-300">Sou estudante de Sistemas de Informação e apaixonado por programação, em busca de um estágio para aprimorar minhas habilidades em desenvolvimento de software. Tenho conhecimento em diversas linguagens, incluindo CSS, Java, JavaScript, Python, HTML, PHP e React Native, o que me permite desenvolver soluções versáteis e abrangentes. Meu objetivo é contribuir com projetos inovadores e eficientes, enquanto aprendo com profissionais experientes e colaboro para o crescimento da equipe.</p>
+            <p class="text-gray-700 dark:text-gray-300">23 anos, estudante de Sistemas de Informação e entusiasta de desenvolvimento de software, busco uma oportunidade de estágio para aplicar e ampliar meus conhecimentos em Java, JavaScript, Python, PHP, HTML, CSS, TailwindCss e React Native. Tenho facilidade para aprender novas tecnologias e me adaptar a diferentes desafios, meu objetivo é contribuir com projetos inovadores, absorvendo conhecimentos enquanto ajudo no crescimento da equipe.</p>
         </section>
 
         <!-- Seção de Educação -->
@@ -80,7 +98,7 @@
         <!-- Seção de Experiência -->
         <section id="experiencia" class="mb-8">
             <h2 class="text-xl font-semibold border-b pb-2 mb-4">Experiência</h2>
-            <p class="text-gray-700 dark:text-gray-300">Ainda não possuo experiência profissional, mas tenho trabalhado em diversos projetos acadêmicos e pessoais para aprimorar minhas habilidades.</p>
+            <p class="text-gray-700 dark:text-gray-300">Estagiário de TI - Prefeitura de Itaquaquecetuba (03/2024 - 03/2025)    Atuei na área de T.I, prestando suporte técnico aos usuários, auxiliando na manutenção de equipamentos e na configuração de softwares e redes. Também participei da análise e resolução de problemas relacionados a sistemas internos, além de contribuir para a melhoria da infraestrutura de TI.</p>
         </section>
 
         <!-- Seção de Certificações -->
@@ -100,12 +118,16 @@
                 <div class="bg-gray-100 p-4 rounded-lg shadow">
                     <h3 class="text-lg font-semibold dark:text-gray-700">Portfólio Pessoal</h3>
                     <p class="text-gray-700">Desenvolvimento de um site pessoal para exibir meu currículo e projetos. </p>
-                    <a href="#" class="text-blue-500 hover:underline block mt-2" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                    <a href="https://github.com/LucasDuarte42/Site-Curriculo" class="text-blue-500 hover:underline block mt-2" target="_blank" rel="noopener noreferrer">Ver mais</a>
                 </div>
 
                 <div class="bg-gray-100 p-4 rounded-lg shadow">
                     <h3 class="text-lg font-semibold dark:text-gray-700">Clone Spotify</h3>
-                    <p class="text-gray-700">Criação de uma página clone do Spotify utilizando Tailwindcss.</p>
+                    <p class="text-gray-700">Desenvolvi uma pagina clone da tela inicial do Spotify utilizando TailwindCss em sua estilização.</p>
+                    <p class="text-gray-950 font-bold">Ferramentas Utilizadas:<br></p>
+                    <p class="text-gray-700">HTML5: Estruturação do conteúdo da página.
+                    <br>Tailwind CSS: Framework CSS utilitário que permite estilização rápida e responsiva.
+                    <br>Font Awesome: Biblioteca de ícones utilizada para exibir os ícones do menu e redes sociais.</p>
                     <a href="https://github.com/LucasDuarte42/CloneSpotifyTailwind" class="text-blue-500 hover:underline block mt-2" target="_blank" rel="noopener noreferrer">Ver mais</a>
                 </div>
 
