@@ -806,13 +806,41 @@
     }
 
     .btn-copy {
-      background: none;
-      border: none;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
       cursor: pointer;
       font-family: var(--font-display);
-      font-size: inherit;
-      color: inherit;
-      display: contents;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.9rem 1.5rem;
+      width: 100%;
+      max-width: 420px;
+      text-align: left;
+      transition: border-color var(--transition), color var(--transition), background var(--transition);
+    }
+
+    .btn-copy:hover {
+      border-color: var(--border-accent);
+      color: var(--text-primary);
+      background: var(--accent-subtle);
+    }
+
+    .btn-copy i {
+      color: var(--accent);
+      font-size: 1.1rem;
+      width: 20px;
+      text-align: center;
+    }
+
+    .btn-copy .link-text {
+      color: var(--accent);
+      font-size: 0.88rem;
+      margin-left: auto;
+      font-family: var(--font-mono);
     }
 
     /* ══════════════════════════════════════
@@ -842,12 +870,17 @@
     }
 
     .reveal {
-      opacity: 0;
-      transform: translateY(28px);
+      opacity: 1;
+      transform: none;
       transition: opacity 0.65s ease, transform 0.65s ease;
     }
 
-    .reveal.visible {
+    .js-loaded .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    .js-loaded .reveal.visible {
       opacity: 1;
       transform: none;
     }
@@ -946,7 +979,7 @@
           Ver projetos
           <i class="fas fa-arrow-right" style="font-size:0.8rem;"></i>
         </a>
-        <a href="curriculo/CURRICULO LUCAS DUARTE.pdf" download="Curriculo-Lucas-Duarte.pdf" class="btn btn-outline">
+        <a href="curriculo/Curriculo-Lucas-Vieira-Duarte.pdf" download="Curriculo-Lucas-Duarte.pdf" class="btn btn-outline">
           <i class="fas fa-download" style="font-size:0.8rem;"></i>
           Download CV
         </a>
@@ -1191,21 +1224,23 @@
         </div>
       </div>
 
-      <!-- Blog Dev -->
+      
       <div class="project-card reveal">
         <div class="card-preview preview-blue">
-          <span class="card-preview-emoji">📝</span>
+          <span class="card-preview-emoji">🔴⚈ . ⚈🔴</span>
         </div>
         <div class="card-body">
           <div class="card-tags">
-            <span class="card-tag">PHP</span>
-            <span class="card-tag">HTML5</span>
-            <span class="card-tag">CSS</span>
+            <span class="card-tag">Next.js</span>
+            <span class="card-tag">React</span>
+            <span class="card-tag">TypeScript</span>
+            <span class="card-tag">Tailwind CSS</span>
+            
           </div>
-          <h3 class="card-title">Blog Dev</h3>
-          <p class="card-desc">Blog de programação dinâmico com renderização PHP, posts com tags e imagens, e sistema de templates com include_once.</p>
+          <h3 class="card-title">Site Pokemon</h3>
+          <p class="card-desc">Este projeto é uma aplicação web desenvolvida com Next.js e TypeScript, focada na exibição e filtragem de dados de Pokémon. Ele permite aos usuários explorar informações detalhadas sobre diferentes Pokémon, utilizando uma interface moderna e responsiva. O projeto demonstra a integração de dados externos, manipulação de estado e construção de componentes reutilizáveis em um ambiente React/Next.js.</p>
           <div class="card-links">
-            <a href="https://github.com/LucasDuarte42/Projeto-Basico-PHP" target="_blank" rel="noopener noreferrer" class="card-link primary">
+            <a href="https://github.com/LucasDuarte42/projeto-site-pokemon" target="_blank" rel="noopener noreferrer" class="card-link primary">
               <i class="fab fa-github"></i> Código
             </a>
           </div>
@@ -1281,7 +1316,7 @@
                 <span style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent);">Avançado</span>
               </div>
               <div style="height:4px; border-radius:100px; background:var(--bg-elevated);">
-                <div style="height:100%; width:80%; border-radius:100px; background:var(--accent);"></div>
+                <div style="height:100%; width:75%; border-radius:100px; background:var(--accent);"></div>
               </div>
             </div>
 
@@ -1322,10 +1357,10 @@
           <span class="link-text">(11) 97038-6267</span>
         </a>
 
-        <button class="contact-item btn-copy" onclick="copyEmail()">
+        <button class="btn-copy" onclick="copyEmail()">
           <i class="fas fa-envelope"></i>
           <span>E-mail</span>
-          <span class="link-text">lucasduarte0227@gmail.com ↗</span>
+          <span class="link-text"><a href="mailto:lucasduarte0227@gmail.com">lucasduarte0227@gmail.com</a> ↗</span>
         </button>
 
         <a href="https://www.linkedin.com/in/lucas-duarte-54b644297/" target="_blank" rel="noopener noreferrer" class="contact-item">
@@ -1363,42 +1398,52 @@
 
 <!-- ════════════════ SCRIPTS ════════════════ -->
 <script>
-  // Scroll reveal
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 70);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // Ativa animações apenas se o browser suportar IntersectionObserver
+  // (evita tela em branco ao abrir como file://)
+  if ('IntersectionObserver' in window) {
+    document.documentElement.classList.add('js-loaded');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 70);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }
 
   // Hamburger
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
+
   hamburger.addEventListener('click', (e) => {
     e.stopPropagation();
     mobileMenu.classList.toggle('open');
   });
+
   mobileMenu.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => mobileMenu.classList.remove('open'));
   });
+
   document.addEventListener('click', (e) => {
     if (!mobileMenu.contains(e.target) && e.target !== hamburger) {
       mobileMenu.classList.remove('open');
     }
   });
 
-  // Copy email
+  // Copiar e-mail
   function copyEmail() {
     navigator.clipboard.writeText('lucasduarte0227@gmail.com').then(() => {
       const toast = document.getElementById('toast');
       toast.classList.add('show');
       setTimeout(() => toast.classList.remove('show'), 2500);
+    }).catch(() => {
+      alert('Email: lucasduarte0227@gmail.com');
     });
   }
 </script>
-
 </body>
 </html>
