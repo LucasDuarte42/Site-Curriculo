@@ -45,7 +45,7 @@ start src/index.html
 
 Após abrir o arquivo `index.html` no navegador, você poderá navegar pelas diferentes seções do currículo. O site foi projetado para ser intuitivo e fácil de usar. Você também pode acessar a versão online do site através do link de deploy (se houver).
 
-![Screenshot do Site Curriculo](./Print.jpg)
+![Screenshot do Site Curriculo](./PRINT.jpg)
 
 ## 📂 Estrutura de Diretórios
 
